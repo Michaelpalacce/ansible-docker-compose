@@ -1,3 +1,5 @@
 ---
 
-# None
+compose_version: 1.29.2
+docker_compose_symlink: yes
+docker_compose_symlink_path: /usr/bin

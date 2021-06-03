@@ -1,12 +1,24 @@
-A simple ansible role that installs the latest version of Docker.
+A simple ansible role that installs a given version of docker-compose
 
-This package closely follows the guide at: https://docs.docker.com/engine/install/ubuntu/
+This package closely follows the guide at: https://docs.docker.com/compose/install/
 
 # Supported variables
 
 ~~~
-arch
+compose_version
 ~~~
-Define your current ubuntu architecture.
-Possible values: `amd64`, `armhf`, `arm64`.
-Defaults to: `amd64`.
+Which version of docker-compose should you install?
+Check out: https://github.com/docker/compose/releases
+Defaults to: `/usr/bin`.
+
+~~~
+docker_compose_symlink
+~~~
+Should a symlink be created?
+Defaults to: `yes`.
+
+~~~
+docker_compose_symlink_path
+~~~
+If `docker_compose_symlink` is set to true, then create a symlink to this path
+Defaults to: `/usr/bin`.
