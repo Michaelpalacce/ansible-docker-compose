@@ -6,7 +6,7 @@
       state: present
 
 - name: Ensure we have docker-compose install file
-  shell: "curl -L \"https://github.com/docker/compose/releases/download/{{ compose_version }/docker-compose-$(uname -s)-$(uname -m)\" -o /usr/local/bin/docker-compose"
+  shell: "curl -L \"https://github.com/docker/compose/releases/download/{{ compose_version }}/docker-compose-$(uname -s)-$(uname -m)\" -o /usr/local/bin/docker-compose"
 
 - name: Ensure the docker-compose has execute privileges
   file:
