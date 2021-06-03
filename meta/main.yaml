@@ -1,0 +1,19 @@
+---
+
+dependencies: []
+
+galaxy_info:
+    role_name: docker_compose
+    author: stefangenov
+    licence: "license (BSD, MIT)"
+    min_ansible_version: 2.9
+    description: Installs docker-compose
+    platforms:
+        - name: Ubuntu
+          versions:
+              - all
+    galaxy_tags:
+        - containers
+        - docker
+        - docker-compose
+        - containerd

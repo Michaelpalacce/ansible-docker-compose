@@ -1,0 +1,21 @@
+---
+
+- name: Ensure we have curl
+  apt:
+      name: curl
+      state: present
+
+- name: Ensure we have docker-compose install file
+  shell: curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+- name: Ensure the docker-compose has execute privileges
+  file:
+      path: /usr/local/bin/docker-compose
+      mode: 0655
+
+- name: Symlink to docker-compose to /usr/bin/docker-compose
+  file:
+      src: /usr/local/bin/docker-compose
+      dest: /usr/bin/docker-compose
+      state: link
+  when: docker_compose_symlink
